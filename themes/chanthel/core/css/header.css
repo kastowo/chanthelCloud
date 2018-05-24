@@ -1,0 +1,380 @@
+/* prevent ugly selection effect on accidental selection */
+#header,
+#navigation,
+#expanddiv {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+/* removed until content-focusing issue is fixed */
+#skip-to-content a {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+#skip-to-content a:focus {
+	left: 76px;
+	top: -9px;
+	color: #fff;
+	width: auto;
+	height: auto;
+}
+
+
+
+/* HEADERS ------------------------------------------------------------------ */
+/*CUSTOMIZED BY 247*/
+#body-user #header,
+#body-settings #header,
+#body-public #header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	height: 60px;
+  	padding: 7px;
+	line-height: 2.5em;
+	background-color: #ffffff;
+	/*background-color: #333;*/
+	/*background-color: #428bca;*/
+	box-sizing: border-box;
+	box-shadow: 1px 1px 13px 0px #f6f6f6;
+}
+
+
+
+/* LOGO and APP NAME -------------------------------------------------------- */
+/*CUSTOMIZED BY 247*/
+#owncloud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 15px 10px 0 45px;
+  	padding-bottom: 0;
+  	height: 65px;
+	box-sizing: border-box;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+	width: 250px;
+}
+#owncloud:focus {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	opacity: .75;
+}
+#owncloud:hover,
+#owncloud:active {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+}
+
+/*CUSTOMIZED BY 247*/
+#header .logo {
+	background-image: url('../img/logo-icon.svg');
+	background-repeat: no-repeat;
+	background-size: 195px;
+	background-position: center 30px;
+	width: 252px;
+	height: 80px;
+	margin: 0 auto;
+}
+
+/*CUSTOMIZED BY 247*/
+#header .logo-icon {
+	/* display logo so appname can be shown next to it */
+	display: inline-block;
+	/*background-image: url(../img/logo-icon-white.svg);*/
+	background-image: url(../img/logo-icon.svg);
+	background-repeat: no-repeat;
+	width: 145px;
+	height: 30px;
+}
+
+/*CUSTOMIZED BY 247*/
+#header .header-appname-container {
+	display: inline-block;
+	position: absolute;
+	left: 250px;
+	height: 27px;
+	padding-top: 18px;
+	padding-right: 10px;
+	padding-left: 16px;
+}
+
+/* hover effect for app switcher label */
+.header-appname-container .header-appname,
+.menutoggle .icon-caret {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+	opacity: .75;
+}
+.menutoggle:hover .header-appname,
+.menutoggle:hover .icon-caret,
+.menutoggle:focus .header-appname,
+.menutoggle:focus .icon-caret,
+.menutoggle.active .header-appname,
+.menutoggle.active .icon-caret {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+}
+
+/* show appname next to logo */
+/*CUSTOMIZED BY 247*/
+.header-appname {
+	display: inline-block;
+	position: relative;
+	color: #5B5B5C;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0;
+	margin-top: -24px;
+	padding: 7px 0 7px 5px;
+	vertical-align: middle;
+}
+/* show caret indicator next to logo to make clear it is tappable */
+#header .icon-caret, #header .icon-caret-dark {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	margin-top: -21px;
+	padding: 0;
+	vertical-align: middle;
+}
+/* do not show menu toggle on public share links as there is no menu */
+#body-public #header .icon-caret, #body-public #header .icon-caret-dark {
+	display: none;
+}
+
+
+
+/* NAVIGATION --------------------------------------------------------------- */
+/*CUSTOMIZED BY 247*/
+#navigation {
+	position: fixed;
+	top: 50px;
+	left: 190px;
+	width: 265px;
+	max-height: 85%;
+	margin-top: 0;
+	padding-bottom: 10px;
+	background-color: #333;
+	box-shadow: 0 1px 10px rgba(50, 50, 50, .7);
+	border-radius: 3px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	display: none;
+	/*overflow-y: auto;
+	overflow-x: hidden;*/
+	z-index: 2000;
+}
+/* arrow look */
+/*CUSTOMIZED BY 247*/
+#navigation:after, #expanddiv:after {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #333;
+	border-width: 10px;
+	margin-left: -10px;
+}
+/* position of dropdown arrow */
+#navigation:after {
+	left: 47%;
+}
+#expanddiv:after {
+	right: 15px;
+}
+
+#navigation, #navigation * {
+	box-sizing:border-box;
+}
+#navigation li {
+	display: inline-block;
+}
+#navigation a {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 0;
+}
+#navigation a span {
+	display: inline-block;
+	font-size: 13px;
+	padding-bottom: 0;
+	padding-left: 0;
+	width: 80px;
+	text-align: center;
+	color: #fff;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+	/* icon opacity and hover effect */
+	#navigation a img,
+	#navigation a span {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+		opacity: .7;
+	}
+	#navigation a:hover img,
+	#navigation a:focus img,
+	#navigation a:hover span,
+	#navigation a:focus span,
+	#navigation a.active img,
+	#navigation a.active span {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		opacity: 1;
+	}
+
+#navigation .app-icon {
+	margin: 0 auto;
+	padding: 0;
+	max-height: 32px;
+	max-width: 32px;
+}
+
+/* Apps management */
+#apps-management {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	opacity: .6;
+	min-height: initial;
+	height: initial;
+	margin: 0;
+}
+
+
+/* loading feedback for apps */
+#navigation .app-loading .icon-loading-dark {
+	display: inline !important;
+	position: absolute;
+	top: 20px;
+	left: 24px;
+	width: 32px;
+	height: 32px;
+}
+#navigation .app-loading .app-icon {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	opacity: .1;
+}
+
+#apps {
+	max-height: calc(100vh - 100px);
+	overflow:auto;
+}
+
+
+/* USER MENU -----------------------------------------------------------------*/
+
+/* info part on the right, used e.g. for info on who shared something */
+.header-right {
+	position: absolute;
+	right: 0;
+	padding: 7px 5px;
+	color: #fff;
+	height: 100%;
+	max-width: 80%;
+	white-space: nowrap;
+	box-sizing: border-box;
+}
+
+/* Profile picture in header */
+#header .avatardiv {
+	float: left;
+	display: inline-block;
+	margin-right: 8px;
+	cursor: pointer;
+	height: 32px;
+	width: 32px;
+}
+#header .avatardiv img {
+	opacity: 1;
+	cursor: pointer;
+}
+/*CUSTOMIZED BY 247*/
+#settings {
+	float: right;
+	color: #5b5b5c;
+	cursor: pointer;
+}
+#settings .icon-loading-small-dark {
+	display: inline-block;
+	margin-bottom: -3px;
+	margin-right: 6px;
+	background-size: 16px 16px;
+}
+#expand {
+	display: block;
+	padding: 7px 30px 6px 10px;
+	cursor: pointer;
+}
+#expand * {
+	cursor: pointer;
+}
+/*CUSTOMIZED BY 247*/
+#expand:hover,
+#expand:focus,
+#expand:active {
+	color: black;
+}
+#expand img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	opacity: .7;
+	margin-bottom: -2px;
+}
+#expand:hover img,
+#expand:focus img,
+#expand:active img {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	opacity: 1;
+}
+#expanddiv {
+	position: absolute;
+	right: 20px;
+	top: 45px;
+	z-index: 2000;
+	display: none;
+	background-color: rgba(0, 0, 0, .97);
+	box-shadow: 0 1px 10px rgba(50, 50, 50, .7);
+	border-radius: 3px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	box-sizing: border-box;
+}
+	#expanddiv a {
+		display: block;
+		height: 40px;
+		color: #fff;
+		padding: 4px 12px 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+		opacity: .7;
+		box-sizing: border-box;
+	}
+	#expanddiv a img {
+		margin-bottom: -3px;
+		margin-right: 6px;
+	}
+	#expanddiv a:hover,
+	#expanddiv a:focus,
+	#expanddiv a:active,
+	#expanddiv a.active {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		opacity: 1;
+	}
+
+/* do not show display name when profile picture is present */
+#header .avatardiv.avatardiv-shown + #expandDisplayName {
+	display: none;
+}
+#header #expand {
+	display: block;
+}
