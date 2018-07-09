@@ -8,8 +8,13 @@
 #app * {
 	box-sizing: border-box;
 }
-
-
+/*CUSTOMIZED BY 247* for blue theme*/
+#app-navigation.blue-theme{
+	background-color: #2366B8 !important;
+}
+#app-navigation > ul {
+	padding: 20px !important;
+}
 
 
 
@@ -31,6 +36,7 @@
 	user-select: none;
 	border-right: 1px solid transparent;
 }
+
 /*CUSTOMIZED BY 247*/
 #app-navigation > ul {
 	position: relative;
